@@ -118,10 +118,6 @@ require('packer').startup(function()
 	--end of plugins
 end)
 
----- Plugins Configs
-
-
-
 --  Other Plugins
 vim.cmd 'colorscheme onedark'
 

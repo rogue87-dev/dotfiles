@@ -4,12 +4,12 @@ vim.g.mapleader = ''
 -- Options
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
-vim.o.timeoutlen =0 
 vim.o.number = true
 vim.o.expandtab = true
 vim.o.insearch = true
 vim.o.smartindent = true
 vim.o.clipboard = "unnamedplus"
+vim.cmd 'colorscheme onedark'
 
 -- Key Mappings
 vim.api.nvim_set_keymap('n', 'c', ':Commentary<CR>', { noremap = true, silent = true })
@@ -24,8 +24,6 @@ end
 
 -- Plugins
 require('packer').startup(function()
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
     use 'tpope/vim-commentary'
     use 'glepnir/galaxyline.nvim'
     use 'rafi/awesome-vim-colorschemes'
@@ -38,8 +36,8 @@ require('packer').startup(function()
 
     use {	--  Treesitter
         'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
 	    require('nvim-treesitter.configs').setup {
-            run = ':TSUpdate',
             ensure_installed =
             {
                 "c",
@@ -89,6 +87,17 @@ require('packer').startup(function()
         } 
     }
 
+    use {
+        'nvim-lualine/lualine.nvim',
+        require('lualine').setup {
+            options = {
+                icons_enabled = true,
+                theme = 'auto'
+            }
+        },
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
     use {   --Gitsigns
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -118,6 +127,4 @@ require('packer').startup(function()
 	--end of plugins
 end)
 
---  Other Plugins
-vim.cmd 'colorscheme onedark'
-
+---- Plugins Configs

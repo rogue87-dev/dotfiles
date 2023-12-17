@@ -4,7 +4,7 @@ vim.g.mapleader = ''
 -- Options
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
-vim.o.timeoutlen =0 
+vim.o.timeoutlen =0
 vim.o.number = true
 vim.o.expandtab = true
 vim.o.insearch = true
@@ -25,9 +25,9 @@ end
 -- Plugins
 require('packer').startup(function()
     use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+    use 'vim-airline/vim-airline-themes'
     use 'tpope/vim-commentary'
-	use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter'
     use 'glepnir/galaxyline.nvim'
     use 'rafi/awesome-vim-colorschemes'
     use 'preservim/tagbar'
@@ -36,7 +36,7 @@ require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'Xuyuanp/scrollbar.nvim'
     -- use 'numToStr/FTerm.nvim'
-    
+
     use {
         'm4xshen/autoclose.nvim',
         require("autoclose").setup({
@@ -52,12 +52,12 @@ require('packer').startup(function()
     use {   --Neotree
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        requires = { 
+        requires = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
             "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-        } 
+        }
     }
 
     use {   --Gitsigns

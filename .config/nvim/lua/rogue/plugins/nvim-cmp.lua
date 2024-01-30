@@ -13,7 +13,7 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
-		-- local lspkind = require("lspkind")
+		local lspkind = require("lspkind")
 
 		--loads vscode style snippets from installed plugins
 		require("luasnip.loaders.from_vscode").lazy_load()
@@ -43,13 +43,14 @@ return {
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
+
 			-- configure lspkind for vs-code like pictograms in completion menu
-			-- formatting = {
-			-- 	format = lspkind.cmp_format({
-			-- 		maxwidth = 50,
-			-- 		ellipsis_char = "...",
-			-- 	}),
-			-- },
+			formatting = {
+				format = lspkind.cmp_format({
+					maxwidth = 50,
+					ellipsis_char = "...",
+				}),
+			},
 		})
 	end,
 }

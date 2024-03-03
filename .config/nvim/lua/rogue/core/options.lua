@@ -14,3 +14,7 @@ vim.o.insearch = true
 vim.o.clipboard = "unnamedplus"
 
 vim.o.scrolloff = 5
+
+-- Disable netrw
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1

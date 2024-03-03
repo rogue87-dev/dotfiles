@@ -1,5 +1,6 @@
 return {
 	"nanozuki/tabby.nvim",
+	enabled = true,
 	event = "VimEnter",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()

@@ -4,18 +4,10 @@ return {
 		name = "moonfly",
 		-- lazy = false,
 		-- priority = 1000,
-
-		config = function()
-			-- vim.cmd([[colorscheme moonfly]])
-		end,
 	},
 	{
 		"kepano/flexoki-neovim",
 		name = "flexoki",
-
-		config = function()
-			-- vim.cmd("colorscheme flexoki-dark")
-		end,
 	},
 	{
 		"navarasu/onedark.nvim",
@@ -61,6 +53,7 @@ return {
 					background = true, -- use background color for virtual text
 				},
 			})
+
 			vim.cmd("colorscheme onedark")
 		end,
 	},

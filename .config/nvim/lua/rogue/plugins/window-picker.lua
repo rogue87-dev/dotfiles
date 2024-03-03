@@ -1,6 +1,8 @@
 return {
 	"s1n7ax/nvim-window-picker",
+	enabled = true, --kills nvim intro
 	name = "window-picker",
+	lazy = true,
 	event = "VeryLazy",
 	version = "2.*",
 

@@ -1,5 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	enabled = true, --kills nvim intro
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 
 	config = function()

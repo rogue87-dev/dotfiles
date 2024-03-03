@@ -1,17 +1,17 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-
-	branch = "v3.x",
+	enabled = true,
+	-- branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
-		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		"3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
 		-- Mappings
 		vim.api.nvim_set_keymap("n", "<C-b>", ":Neotree toggle<CR>", { noremap = true, silent = true })
-		
+
 		-- If you want icons for diagnostic errors, you'll need to define them somewhere:
 		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
 		vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
@@ -73,8 +73,8 @@ return {
 				git_status = {
 					symbols = {
 						-- Change type
-						added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-						modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+						added = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
+						modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
 						deleted = "✖", -- this can only be used in the git_status source
 						renamed = "󰁕", -- this can only be used in the git_status source
 						-- Status type
@@ -112,7 +112,7 @@ return {
 			commands = {},
 			window = {
 				position = "left",
-				width = 40,
+				width = 38,
 				mapping_options = {
 					noremap = true,
 					nowait = true,
@@ -286,6 +286,5 @@ return {
 				},
 			},
 		})
-		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 	end,
 }

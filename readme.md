@@ -1,1 +1,1 @@
-My fedora dotfiles
+my dotfiles (duh)

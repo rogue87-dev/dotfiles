@@ -15,6 +15,7 @@ require("lazy").setup({
 	{ import = "rogue.plugins" },
 	{ import = "rogue.plugins.lsp" },
 	{ import = "rogue.plugins.autocmp" },
+  { import = "rogue.plugins.debugger" }
 }, {
 	install = {
 		colorscheme = { "onedark" },

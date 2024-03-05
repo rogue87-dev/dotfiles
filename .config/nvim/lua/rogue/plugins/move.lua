@@ -1,6 +1,6 @@
 return {
-	"matze/vim-move",
-	enabled = true,
+  "matze/vim-move",
+  enabled = true,
 
-	config = function() end,
+  config = function() end,
 }

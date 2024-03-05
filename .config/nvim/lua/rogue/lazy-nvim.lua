@@ -11,7 +11,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "rogue.plugins" }, { import = "rogue.plugins.lsp" } }, {
+require("lazy").setup({
+	{ import = "rogue.plugins" },
+	{ import = "rogue.plugins.lsp" },
+	{ import = "rogue.plugins.autocmp" },
+}, {
 	install = {
 		colorscheme = { "onedark" },
 	},

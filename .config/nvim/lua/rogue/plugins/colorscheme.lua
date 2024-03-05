@@ -54,7 +54,7 @@ return {
 				},
 			})
 
-			vim.cmd("colorscheme onedark")
+			vim.cmd("colorscheme moonfly")
 		end,
 	},
 }

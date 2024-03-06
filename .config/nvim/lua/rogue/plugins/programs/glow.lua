@@ -2,8 +2,6 @@ return {
   "ellisonleao/glow.nvim",
   enabled = true,
   cmd = "Glow",
-  --  config = true,
-
   config = function()
     require("glow").setup({
       glow_path = "/usr/bin/glow", -- will be filled automatically with your glow bin in $PATH, if any

@@ -4,13 +4,9 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	enabled = true,
-	-- lazy = false,
-	-- event = { "BufReadPre", "BufNewFile" },
-
 	config = function()
 		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 		-- in case I wanted to add something to all servers
 		local servers = { "lua_ls", "tsserver" }
 		for _, server in ipairs(servers) do

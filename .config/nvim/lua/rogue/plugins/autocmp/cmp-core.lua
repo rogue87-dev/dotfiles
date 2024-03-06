@@ -6,6 +6,7 @@ return {
     "hrsh7th/cmp-nvim-lsp", --source for lsp
     "hrsh7th/cmp-buffer", --source for text in buffer
     "hrsh7th/cmp-path",   --source for file system paths
+    "hrsh7th/cmp-nvim-lsp-signature-help"
   },
   config = function()
     local cmp = require("cmp")
@@ -34,6 +35,7 @@ return {
       }, {
         { name = "path" },
         { name = "buffer" },
+        { name = "nvim_lsp_signature_help" }
       }),
     })
   end,

@@ -15,6 +15,8 @@ vim.o.clipboard = "unnamedplus"
 
 vim.o.scrolloff = 5
 
+vim.o.fillchars = "eob:|"
+
 -- Disable netrw
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1

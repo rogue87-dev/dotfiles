@@ -12,17 +12,32 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "rogue.plugins" },
-	{ import = "rogue.plugins.lsp" },
-	{ import = "rogue.plugins.autocmp" },
-	{ import = "rogue.plugins.debugger" },
-	{ import = "rogue.plugins.status" },
-	{ import = "rogue.plugins.ui" },
-	{ import = "rogue.plugins.ui.themes" },
-	{ import = "rogue.plugins.programs" },
-}, {
-	colorscheme = {
-		-- install = "",
+	spec = {
+		{ import = "rogue.plugins" },
+		{ import = "rogue.plugins.lsp" },
+		{ import = "rogue.plugins.autocmp" },
+		{ import = "rogue.plugins.debugger" },
+		{ import = "rogue.plugins.status" },
+		{ import = "rogue.plugins.ui" },
+		{ import = "rogue.plugins.ui.themes" },
+		{ import = "rogue.plugins.programs" },
+	},
+	dev = {
+		-- path = {},
+		-- patterns = {},
+		-- fallback = false,
+	},
+	install = {
+		missing = true,
+		colorscheme = { "moonfly" },
+	},
+	ui = {
+		size = {
+			width = 0.8,
+			height = 0.8,
+		},
+		wrap = true,
+		border = "single",
 	},
 	checker = {
 		enabled = true,

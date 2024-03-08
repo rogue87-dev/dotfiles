@@ -5,8 +5,9 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
-		"nvim-telescope/telescope-media-files.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"nvim-telescope/telescope-media-files.nvim",
+		"folke/noice.nvim",
 	},
 
 	config = function()
@@ -27,6 +28,7 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("media_files")
+		telescope.load_extension("noice")
 
 		local keymap = vim.keymap
 

@@ -3,8 +3,10 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 	},
-	enabled = true,
+	-- enabled = false,
 	config = function()
+    -- hacky way but whatever I guess
+    require('lspconfig.ui.windows').default_options.border = 'single'
 		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		-- in case I wanted to add something to all servers

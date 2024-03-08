@@ -1,6 +1,6 @@
 return {
 	"williamboman/mason.nvim",
-	enabled = true,
+	-- enabled = false,
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},
@@ -10,6 +10,9 @@ return {
 
 		mason.setup({
 			ui = {
+        border = "single",
+        width = 0.8,
+        height = 0.8,
 				icons = {
 					package_installed = "✓",
 					package_pending = "➜",

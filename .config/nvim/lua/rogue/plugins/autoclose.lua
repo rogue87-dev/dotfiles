@@ -1,10 +1,10 @@
 return {
 	"m4xshen/autoclose.nvim",
-	enabled = true,
+	-- enabled = false,
 	config = function()
 		require("autoclose").setup({
 			keys = {
-				["$"] = { escape = false, close = true, pair = "$$", disabled_filetypes = { "text", "markdown" } },
+				-- ["$"] = { escape = true, close = true, pair = "$$", disabled_filetypes = { "text", "markdown" } },
 			},
 		})
 	end,

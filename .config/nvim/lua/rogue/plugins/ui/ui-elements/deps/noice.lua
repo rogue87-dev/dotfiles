@@ -1,8 +1,10 @@
 return {
 	"folke/noice.nvim",
-  -- enabled = false,
+	-- enabled = false,
 	event = "VeryLazy",
-	opts = {},
+	opts = {
+		show_keystrokes = true,
+	},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",

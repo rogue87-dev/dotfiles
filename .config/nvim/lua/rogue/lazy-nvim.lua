@@ -14,12 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{ import = "rogue.plugins" },
+
+    { import = "rogue.plugins.ui.ui-elements.deps" },
+    { import = "rogue.plugins.ui.ui-elements" },
+		{ import = "rogue.plugins.ui.themes" },
+
 		{ import = "rogue.plugins.lsp" },
 		{ import = "rogue.plugins.autocmp" },
 		{ import = "rogue.plugins.debugger" },
+
 		{ import = "rogue.plugins.status" },
-		{ import = "rogue.plugins.ui" },
-		{ import = "rogue.plugins.ui.themes" },
 		{ import = "rogue.plugins.programs" },
 	},
 	dev = {

@@ -15,12 +15,12 @@ require("lazy").setup({
 	spec = {
 		{ import = "rogue.plugins" },
 
-    { import = "rogue.plugins.ui.ui-elements.deps" },
-    { import = "rogue.plugins.ui.ui-elements" },
+    { import = "rogue.plugins.ui.deps" },
+    { import = "rogue.plugins.ui" },
 		{ import = "rogue.plugins.ui.themes" },
 
 		{ import = "rogue.plugins.lsp" },
-		{ import = "rogue.plugins.autocmp" },
+		{ import = "rogue.plugins.autocomplete" },
 		{ import = "rogue.plugins.debugger" },
 
 		{ import = "rogue.plugins.status" },

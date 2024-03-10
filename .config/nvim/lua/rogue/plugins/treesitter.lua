@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  enabled = true,
+  -- enabled = false,
   build = function()
     require("nvim-treesitter.install").update({ with_sync = true })
   end,
@@ -25,6 +25,8 @@ return {
         "scss",
         "vim",
         "markdown",
+        "markdown_inline",
+        "regex",
         "bash",
       },
       auto_install = true,

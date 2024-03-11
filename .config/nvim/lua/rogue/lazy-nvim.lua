@@ -21,6 +21,7 @@ require("lazy").setup({
 
 		{ import = "rogue.plugins.lsp" },
 		{ import = "rogue.plugins.autocomplete" },
+		{ import = "rogue.plugins.autocomplete.snips" },
 		{ import = "rogue.plugins.debugger" },
 
 		{ import = "rogue.plugins.status" },

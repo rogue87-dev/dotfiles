@@ -1,19 +1,18 @@
 return {
   "nanozuki/tabby.nvim",
-  -- enabled = false,
   event = "VimEnter",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
+    require("tabby.tabline").use_preset("active_wins_at_tail", {})
+
     local theme = {
       fill = "TabLineFill",
-      -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
       head = "TabLine",
       current_tab = "TabLineSel",
       tab = "TabLine",
       win = "TabLine",
       tail = "TabLine",
     }
-
     require("tabby.tabline").set(function(line)
       return {
         {
@@ -23,12 +22,12 @@ return {
         line.tabs().foreach(function(tab)
           local hl = tab.is_current() and theme.current_tab or theme.tab
           return {
-            line.sep(" ", hl, theme.fill),
-            tab.is_current() and "" or "󰆣",
+            line.sep("", hl, theme.fill),
+            tab.is_current() and "" or "",
             tab.number(),
-            tab.name(),
+            -- tab.name(),
             tab.close_btn(""),
-            line.sep(" ", hl, theme.fill),
+            line.sep("", hl, theme.fill),
             hl = hl,
             margin = " ",
           }
@@ -37,7 +36,7 @@ return {
         line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
           return {
             line.sep("", theme.win, theme.fill),
-            win.is_current() and "" or "",
+            win.is_current() and "" or "󰆣",
             win.buf_name(),
             line.sep("", theme.win, theme.fill),
             hl = theme.win,
@@ -51,5 +50,19 @@ return {
         hl = theme.fill,
       }
     end)
+
+    local map = vim.api.nvim_set_keymap
+    local opts = { noremap = true, silent = true }
+    map("n", "<A-n>", ":$tabnew<CR>", opts)
+    map("n", "<A-c>", ":tabclose<CR>", opts)
+    map("n", "<A-t>", ":tabonly<CR>", opts)
+
+    map("n", "<A-.>", ":tabn<CR>", opts)
+    map("n", "<A-,>", ":tabp<CR>", opts)
+
+    -- move current tab to previous position
+    map("n", "<C-,>", ":-tabmove<CR>", opts)
+    -- move current tab to next position
+    map("n", "<C-.>", ":+tabmove<CR>", opts)
   end,
 }

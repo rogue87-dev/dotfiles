@@ -1,10 +1,10 @@
 -- well seems like debuggers for neovim are in a weird state rn, so I'm gonna keep it like this for now
 return {
 	"mfussenegger/nvim-dap",
+  enabled = false,
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 	},
-  enabled = false,
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")

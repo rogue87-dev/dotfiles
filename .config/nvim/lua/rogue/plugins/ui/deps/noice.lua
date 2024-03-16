@@ -29,7 +29,7 @@ return {
             icon = "",
             lang = "lua",
           },
-          help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+          help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
           input = {}, -- Used by input()
           -- lua = false, -- to disable a format, set to `false`
         },
@@ -111,7 +111,7 @@ return {
       },
       lsp = {
         progress = {
-          enabled = false,
+          enabled = true,
           -- Lsp Progress is formatted using the builtins for lsp_progress. See config.format.builtin
           -- See the section on formatting for more details on how to customize.
           --- @type NoiceFormat|string
@@ -123,34 +123,34 @@ return {
         },
         override = {
           -- override the default lsp markdown formatter with Noice
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = false,
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           -- override the lsp markdown formatter with Noice
-          ["vim.lsp.util.stylize_markdown"] = false,
+          ["vim.lsp.util.stylize_markdown"] = true,
           -- override cmp documentation with Noice (needs the other options to work)
-          ["cmp.entry.get_documentation"] = false,
+          ["cmp.entry.get_documentation"] = true,
         },
-        hover = {
-          enabled = false,
-          silent = false, -- set to true to not show a message if hover is not available
-          view = nil, -- when nil, use defaults from documentation
-          ---@type NoiceViewOptions
-          opts = {}, -- merged with defaults from documentation
-        },
+        -- hover = {
+        --   enabled = true,
+        --   silent = false, -- set to true to not show a message if hover is not available
+        --   view = nil, -- when nil, use defaults from documentation
+        --   ---@type NoiceViewOptions
+        --   opts = {}, -- merged with defaults from documentation
+        -- },
         signature = {
           enabled = false,
           auto_open = {
-            enabled = true,
-            trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
-            luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
+            enabled = false,
+            trigger = false, -- Automatically show signature help when typing a trigger character from the LSP
+            luasnip = false, -- Will open signature help when jumping to Luasnip insert nodes
             throttle = 50, -- Debounce lsp signature help request by 50ms
           },
-          view = nil, -- when nil, use defaults from documentation
+          view = nil,  -- when nil, use defaults from documentation
           ---@type NoiceViewOptions
-          opts = {},  -- merged with defaults from documentation
+          opts = {},   -- merged with defaults from documentation
         },
         message = {
           -- Messages shown by lsp servers
-          -- enabled = false,
+          enabled = false,
           view = "notify",
           opts = {},
         },
@@ -194,13 +194,13 @@ return {
       presets = {
         -- you can enable a preset by setting it to true, or a table that will override the preset config
         -- you can also add custom presets that you can enable/disable with enabled=true
-        bottom_search = false,     -- use a classic bottom cmdline for search
-        command_palette = false,   -- position the cmdline and popupmenu together
-        long_message_to_split = false, -- long messages will be sent to a split
-        inc_rename = false,        -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = false,    -- add a border to hover docs and signature help
+        bottom_search = true,     -- use a classic bottom cmdline for search
+        command_palette = true,   -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false,       -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true,    -- add a border to hover docs and signature help
       },
-      throttle = 1000 / 30,        -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
+      throttle = 1000 / 30,       -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
       ---@type NoiceConfigViews
       views = {}, ---@see section on views
       ---@type NoiceRouteConfig[]
@@ -210,5 +210,6 @@ return {
       ---@type NoiceFormatOptions
       format = {}, --- @see section on formatting
     })
+    require("telescope").load_extension("noice")
   end,
 }

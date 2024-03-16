@@ -12,11 +12,12 @@ vim.o.relativenumber = true
 vim.o.termguicolors = true
 vim.o.insearch = true
 vim.o.clipboard = "unnamedplus"
+vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 
 vim.o.scrolloff = 5
 
 vim.o.fillchars = "eob: "
 
 -- Disable netrw
-vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

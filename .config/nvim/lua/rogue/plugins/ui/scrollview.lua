@@ -3,7 +3,7 @@ return {
   -- enabled = false,
   config = function()
     require("scrollview").setup({
-      excluded_filetypes = { "neo-tree" },
+      excluded_filetypes = { "neo-tree", "cmp", "mason" },
       current_only = true,
       base = "right",
       -- column = 80,

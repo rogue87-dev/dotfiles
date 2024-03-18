@@ -22,7 +22,6 @@ require("lazy").setup({
 		{ import = "rogue.plugins.lsp" },
 		{ import = "rogue.plugins.autocomplete" },
 		{ import = "rogue.plugins.autocomplete.snips" },
-		{ import = "rogue.plugins.debugger" },
 
 		{ import = "rogue.plugins.status" },
 		{ import = "rogue.plugins.programs" },
@@ -34,7 +33,7 @@ require("lazy").setup({
 	},
 	install = {
 		missing = true,
-		colorscheme = { "moonfly" },
+		colorscheme = { "github_dark_default" },
 	},
 	ui = {
 		size = {
@@ -42,7 +41,7 @@ require("lazy").setup({
 			height = 0.8,
 		},
 		wrap = true,
-		border = "single",
+		border = "rounded",
 	},
 	checker = {
 		enabled = true,

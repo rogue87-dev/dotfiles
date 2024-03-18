@@ -1,7 +1,7 @@
 return {
   "Mofiqul/vscode.nvim",
   -- enabled = false,
-  lazy = false,
+  -- lazy = false,
   priority = 1000,
   opts = {
     background = "dark",

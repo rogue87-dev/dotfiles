@@ -46,7 +46,10 @@ return {
     })
 
     local gs = package.loaded.gitsigns
-    vim.keymap.set('n', '<leader>hp', gs.preview_hunk)
-    vim.keymap.set('n', '<leader>hb', function() gs.blame_line{full=true} end)
+    local map = vim.keymap.set
+    map("n", "<leader>hp", gs.preview_hunk)
+    map("n", "<leader>hb", function()
+      gs.blame_line({ full = true })
+    end)
   end,
 }

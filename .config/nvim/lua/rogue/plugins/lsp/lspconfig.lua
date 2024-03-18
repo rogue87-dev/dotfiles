@@ -1,28 +1,26 @@
 return {
-	"neovim/nvim-lspconfig",
-	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
-	},
-	-- enabled = false,
-	config = function()
+  "neovim/nvim-lspconfig",
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+  },
+  -- enabled = false,
+  config = function()
     -- hacky way but whatever I guess
-    require('lspconfig.ui.windows').default_options.border = 'single'
+    require("lspconfig.ui.windows").default_options.border = "rounded"
 
-		local lspconfig = require("lspconfig")
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		-- in case I wanted to add something to all servers
-		local servers = { "lua_ls", "tsserver" }
-		for _, server in ipairs(servers) do
-			lspconfig[server].setup({
-				capabilities = capabilities,
-			})
-		end
+    local lspconfig = require("lspconfig")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    -- in case I wanted to add something to all servers
+    local servers = { "lua_ls", "tsserver", "html", "cssls", "bashls" }
+    for _, server in ipairs(servers) do
+      lspconfig[server].setup({
+        capabilities = capabilities,
+      })
+    end
 
-		lspconfig.lua_ls.setup({})
-		lspconfig.tsserver.setup({})
-
-		vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-		vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-	end,
+    local map = vim.keymap.set
+    map("n", "K", vim.lsp.buf.hover, {})
+		map("n", "gd", vim.lsp.buf.definition, {})
+		map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+  end,
 }

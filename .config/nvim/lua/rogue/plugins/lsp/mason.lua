@@ -11,7 +11,7 @@ return {
 
 		mason.setup({
 			ui = {
-				border = "single",
+				border = "rounded",
 				width = 0.8,
 				height = 0.8,
 				icons = {

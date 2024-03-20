@@ -1,6 +1,9 @@
 return {
 	"williamboman/mason.nvim",
-	-- enabled = false,
+  event = "BufReadPost",
+  cmd = {
+    "Mason"
+  },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -8,7 +11,6 @@ return {
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
-
 		mason.setup({
 			ui = {
 				border = "rounded",
@@ -21,7 +23,6 @@ return {
 				},
 			},
 		})
-
 		mason_lspconfig.setup({
 			auto_install = true,
 			ensure_installed = {

@@ -1,10 +1,14 @@
 return {
-  "matze/vim-move",
-  enabled = true,
-
-  config = function() end,
-  -- <A-k>   Move current line/selection up
-  -- <A-j>   Move current line/selection down
-  -- <A-h>   Move current character/selection left
-  -- <A-l>   Move current character/selection right
+	"fedepujol/move.nvim",
+  event = "BufReadPost",
+	opts = {},
+	config = function()
+    require("move").setup()
+		local opts = { noremap = true, silent = true }
+		local map = vim.keymap.set
+		map("n", "<A-j>", ":MoveLine(1)<CR>", opts)
+		map("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
+		map ("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
+		map("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
+	end,
 }

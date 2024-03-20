@@ -1,34 +1,32 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  -- enabled = false,
+  event = "BufEnter",
   build = function()
     require("nvim-treesitter.install").update({ with_sync = true })
   end,
-
-  config = function()
-    local configs = require("nvim-treesitter.configs")
-    configs.setup({
-      ensure_installed = {
-        "html",
-        "css",
-        "scss",
-        "javascript",
-        "markdown",
-        "markdown_inline",
-        "git_config",
-        "json",
-        "json5",
-        "python",
-        "lua",
-        "vimdoc",
-        "bash",
-        "regex",
-        "gitignore",
-      },
-      -- sync_install = true,
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
+  opts = {
+    ensure_installed = {
+      "html",
+      "css",
+      "scss",
+      "javascript",
+      "markdown",
+      "markdown_inline",
+      "git_config",
+      "json",
+      "json5",
+      "python",
+      "lua",
+      "vimdoc",
+      "bash",
+      "regex",
+      "gitignore",
+    },
+    auto_install = true,
+    highlight = { enable = true },
+    indent = { enable = true },
+  },
+  config = function(opts)
+    require("nvim-treesitter.configs").setup(opts)
   end,
 }

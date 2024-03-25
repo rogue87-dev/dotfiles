@@ -19,13 +19,16 @@ return {
 				null_ls.builtins.completion.tags,
 
 				-- Formatting
+        null_ls.builtins.formatting.prettierd,
+        null_ls.builtins.formatting.markdownlint,
+        null_ls.builtins.formatting.stylelint,
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettierd,
-				null_ls.builtins.formatting.stylelint,
+        null_ls.builtins.formatting.shellharden,
 
 				-- Diagnostics
 				null_ls.builtins.diagnostics.codespell,
 				null_ls.builtins.diagnostics.markdownlint,
+        null_ls.builtins.diagnostics.stylelint,
 
 				-- Hover
 				null_ls.builtins.hover.dictionary,

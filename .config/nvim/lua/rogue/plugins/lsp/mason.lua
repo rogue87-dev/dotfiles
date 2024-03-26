@@ -11,8 +11,10 @@ return { -- For installing LSPs, DAPs, formatters, linters
   config = function()
     -- The one and only
     local mason = require("mason")
+
     -- For installing LSPs and DAPs
     local mason_lspconfig = require("mason-lspconfig")
+
     -- For installing formatters, linters ... etc
     local mason_tool_installer = require("mason-tool-installer")
 

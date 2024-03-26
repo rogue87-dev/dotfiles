@@ -1,4 +1,4 @@
-return {  -- Completion Core
+return { -- Completion Core
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
@@ -15,9 +15,7 @@ return {  -- Completion Core
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
       },
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
+      config = function() require("luasnip.loaders.from_vscode").lazy_load() end,
     },
   },
   config = function()
@@ -46,7 +44,7 @@ return {  -- Completion Core
         { name = "nvim_lsp_signature_help" },
         { name = "luasnip" },
         { name = "path" },
-        { name = "buffer" },
+        -- { name = "buffer" },
       }),
     })
   end,

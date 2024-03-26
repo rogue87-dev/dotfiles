@@ -15,7 +15,6 @@ return {
 				null_ls.builtins.code_actions.gitsigns,
 
 				-- Completion
-				null_ls.builtins.completion.luasnip,
 				null_ls.builtins.completion.tags,
 
 				-- Formatting

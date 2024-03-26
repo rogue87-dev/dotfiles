@@ -33,5 +33,23 @@ return {
 		vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
 		vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 	end,
-	opts = {},
+	opts = {
+		default_component_configs = {
+			git_status = {
+				symbols = {
+					-- Change type
+					added = "", -- ✚
+          modified = "", -- 
+					deleted = "✖",
+					renamed = "󰁕",
+					-- Status type
+					untracked = "",
+					ignored = "",
+					unstaged = "",
+					staged = "",
+					conflict = "",
+				},
+			},
+		},
+	},
 }

@@ -17,7 +17,6 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 
 vim.o.scrolloff = 5
-
 vim.o.fillchars = "eob: "
 
 -- Disable netrw
